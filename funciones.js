@@ -1,48 +1,26 @@
-const VENTAS_BASE = 5;
+function calcularDisponible(ingresos, egresos){
+    let resultado = ingresos - egresos;
+    return resultado < 0 ? 0 : resultado;
+} 
 
-function calcularComision(numeroVentas, PrecioProducto) {
-    let comision = 0;
-
-    if (numeroVentas > VENTAS_BASE) {
-        let ventasExtra = numeroVentas - VENTAS_BASE;
-        comision = ventasExtra * (PrecioProducto * 0.1);
-    }
-
-    return comision;
+function calcularCapacidadPago(montoDisponible){
+    return montoDisponible * 0.5; 
 }
 
-function calcular() {
-
-    // recuperamos propiedades de las cajas de texto
-    let componenteSueldoBase = document.getElementById("txtSueldoBase");
-    let componenteVentas = document.getElementById("txtVentas");
-    let componentePrecio = document.getElementById("txtPrecio");
-
-
-    // recuperamos el valor de las cajas de texto
-    let sueldoBaseStr = componenteSueldoBase.value;
-    let ventasStr = componenteVentas.value;
-    let precioStr = componentePrecio.value;
+function calcularInteresSimple(monto, tasa, plazoAnios){
+    let interes = monto * (tasa / 100) * plazoAnios;
+    return interes;
 }
 
-function calcular(){
+function calcularTotalPagar(monto, interes){
+    return monto + interes + 100;
+}
 
+function calcularCuotaMensual(total, plazoAnios){
+    let meses = plazoAnios * 12;
+    return total / meses;
+}
 
-        // convertimos el texto a número
-
-        let sueldoBase = parseFloat(sueldoBaseStr);
-        let numeroVentas = parseFloat(numeroVentasStr);
-        let PrecioProducto = parseFloat(PrecioProductoStr);
-
-        let comision = calcularComision(numeroVentas, PrecioProducto);
-
-        let total = sueldoBase + comision;
-
-        let spSueldoBase = document.getElementById("spSueldoBase");
-        let spComision = document.getElementById("spComision");
-        let spTotal = document.getElementById("spTotal");
-
-        spSueldoBase.textContent = sueldoBase;
-        spComision.textContent = comision;
-        spTotal.textContent = total;
-}    
+function aprobarCredito(capacidadPago, cuotaMensual){
+    return capacidadPago > cuotaMensual;
+}

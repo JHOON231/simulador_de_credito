@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco del Pacífico - Simulador</title>
+    <header class="header">
+    <h1>Banco del Pacífico</h1>
+    <img src="banco.png" alt="Logo Banco del Pacífico" class="logo">
+    <p>Simulador de Crédito</p>
+</header>
+    <link rel="stylesheet" href="simulador.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Banco del Pacífico</h1>
+        <p>Simulador de Crédito</p>
+    </header>
+
+    <div class="container">
+
+        <div class="section">
+            <h2>Datos Financieros</h2>
+
+            <label>Ingresos</label>
+            <input type="text" id="txtIngresos" placeholder="Ej: 1000">
+
+            <label>Egresos</label>
+            <input type="text" id="txtEgresos" placeholder="Ej: 500">
+
+            <div class="result-box">
+                <p>Disponible: <span id="spnDisponible"></span></p>
+                <p>Capacidad: <span id="spnCapacidadPago"></span></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Solicitud de Crédito</h2>
+
+            <label>Monto</label>
+            <input type="text" id="txtMonto">
+
+            <label>Plazo (años)</label>
+            <input type="text" id="txtPlazo">
+
+            <label>Tasa (%)</label>
+            <input type="text" id="txtTasaInteres">
+
+            <div class="result-box">
+                <p>Interés: <span id="spnInteresPagar"></span></p>
+                <p>Total: <span id="spnTotalPrestamo"></span></p>
+                <p>Cuota: <span id="spnCuotaMensual"></span></p>
+            </div>
+
+            <div class="estado" id="spnEstadoCredito">
+                ANALIZANDO...
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button onclick="calcular()">Calcular</button>
+            <button onclick="reiniciar()" class="secondary">Reiniciar</button>
+        </div>
+
+    </div>
+
+    <script src="funciones.js"></script>
+    <script src="simulador.js"></script>
+</body>
+</html>

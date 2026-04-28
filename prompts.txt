@@ -1,0 +1,4 @@
+quiero que tomes un rol de de diseñador grafico y le des un haspecto del banco del pacifico sin juntar los codigos 
+
+
+quiero que agregues una imagen del logo del banco del pacifico en la parte de arriba despues del titulo , usa el nombre banco.png 

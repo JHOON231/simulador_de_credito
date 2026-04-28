@@ -1,4 +1,6 @@
 function calcular(){
+    if (!validarTodo()) {
+        return;}
     let ingresos = parseFloat(document.getElementById("txtIngresos").value) || 0;
     let egresos = parseFloat(document.getElementById("txtEgresos").value) || 0;
     let monto = parseFloat(document.getElementById("txtMonto").value) || 0;
@@ -23,4 +25,12 @@ function calcular(){
     } else {
         document.getElementById("spnEstadoCredito").innerHTML = "Crédito Rechazado";
     }
+}
+
+window.onload = function(){
+    document.getElementById("txtIngresos").onblur = () => validarCampo("txtIngresos","errorIngresos","Ingresos");
+    document.getElementById("txtEgresos").onblur = () => validarCampo("txtEgresos","errorEgresos","Egresos");
+    document.getElementById("txtMonto").onblur = () => validarCampo("txtMonto","errorMonto","Monto");
+    document.getElementById("txtPlazo").onblur = () => validarCampo("txtPlazo","errorPlazo","Plazo");
+    document.getElementById("txtTasaInteres").onblur = () => validarCampo("txtTasaInteres","errorTasa","Tasa");
 }

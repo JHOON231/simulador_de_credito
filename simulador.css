@@ -130,3 +130,10 @@ button.secondary {
     margin: 10px 0;
     filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
 }
+
+.error {
+    color: red;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    margin: 2px 0 8px 0;
+}

@@ -25,6 +25,39 @@ function aprobarCredito(capacidadPago, cuotaMensual){
     return capacidadPago > cuotaMensual;
 } 
 
+function validarCampo(idInput, idError, nombreCampo) {
+    let valor = document.getElementById(idInput).value.trim();
+    let error = document.getElementById(idError);
+
+    if (valor === "") {
+        error.innerHTML = "El campo " + nombreCampo + " es obligatorio";
+        return false;
+    }
+
+    if (isNaN(valor)) {
+        error.innerHTML = "Solo se permiten números";
+        return false;
+    }
+
+    if (parseFloat(valor) <= 0) {
+        error.innerHTML = nombreCampo + " debe ser mayor a 0";
+        return false;
+    }
+
+    error.innerHTML = "";
+    return true;
+}
+
+function validarTodo(){
+    let v1 = validarCampo("txtIngresos", "errorIngresos", "Ingresos");
+    let v2 = validarCampo("txtEgresos", "errorEgresos", "Egresos");
+    let v3 = validarCampo("txtMonto", "errorMonto", "Monto");
+    let v4 = validarCampo("txtPlazo", "errorPlazo", "Plazo");
+    let v5 = validarCampo("txtTasaInteres", "errorTasa", "Tasa");
+
+    return v1 && v2 && v3 && v4 && v5;
+}
+
 function reiniciar(){
     document.getElementById("txtIngresos").value = "";
     document.getElementById("txtEgresos").value = "";
@@ -37,4 +70,9 @@ function reiniciar(){
     document.getElementById("spnTotalPrestamo").innerHTML = "USD 0";
     document.getElementById("spnCuotaMensual").innerHTML = "USD 0";
     document.getElementById("spnEstadoCredito").innerHTML = "";
+    document.getElementById("errorIngresos").innerHTML = "";
+    document.getElementById("errorEgresos").innerHTML = "";
+    document.getElementById("errorMonto").innerHTML = "";
+    document.getElementById("errorPlazo").innerHTML = "";
+    document.getElementById("errorTasa").innerHTML = "";
 }

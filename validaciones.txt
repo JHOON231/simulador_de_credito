@@ -1,0 +1,26 @@
+Quiero agregar validaciones a mi formulario usando JavaScript.
+
+Condiciones obligatorias:
+- No usar alert
+- Los mensajes de error deben mostrarse debajo de cada input
+- Los mensajes deben ser de color rojo y con letra clara (tipo imprenta)
+- Solo se pueden ingresar números
+- Los campos no pueden estar vacíos
+- No cambiar los ids existentes
+- Usar el evento onblur para validar cada input cuando el usuario salga del campo
+- Las validaciones también deben ejecutarse cuando se presione el botón "Calcular"
+- No juntar los códigos (mantener HTML, CSS y JS separados)
+
+Validaciones a implementar:
+- Ingresos: obligatorio, numérico, mayor a 0
+- Egresos: obligatorio, numérico, mayor o igual a 0
+- Monto: obligatorio, numérico, mayor a 0
+- Plazo: obligatorio, numérico, mayor a 0
+- Tasa: obligatorio, numérico, mayor a 0
+
+Comportamiento esperado:
+- Si hay errores, no se debe ejecutar el cálculo
+- Mostrar mensajes claros debajo de cada input
+- Si el campo es válido, el mensaje desaparece
+
+El resultado debe integrarse con mi código actual sin romper la funcionalidad existente.

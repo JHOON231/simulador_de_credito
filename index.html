@@ -24,10 +24,13 @@
             <h2>Datos Financieros</h2>
 
             <label>Ingresos</label>
-            <input type="text" id="txtIngresos" placeholder="Ej: 1000">
+            <input type="text" id="txtIngresos">
+            <p class="error" id="errorIngresos"></p>
 
             <label>Egresos</label>
-            <input type="text" id="txtEgresos" placeholder="Ej: 500">
+            <input type="text" id="txtEgresos">
+            <p class="error" id="errorEgresos"></p>
+
 
             <div class="result-box">
                 <p>Disponible: <span id="spnDisponible"></span></p>
@@ -40,12 +43,15 @@
 
             <label>Monto</label>
             <input type="text" id="txtMonto">
+            <p class="error" id="errorMonto"></p>
 
             <label>Plazo (años)</label>
             <input type="text" id="txtPlazo">
+            <p class="error" id="errorPlazo"></p>
 
             <label>Tasa (%)</label>
             <input type="text" id="txtTasaInteres">
+            <p class="error" id="errorTasa"></p>
 
             <div class="result-box">
                 <p>Interés: <span id="spnInteresPagar"></span></p>
